@@ -1,0 +1,60 @@
+$container: 1200px;
+$container-slim: 1030px;
+$gutter: 15px;
+$gutter-site: 20px;
+$default-link: #ff0000;
+$default-color: #000;
+$default-size: 16px;
+$default-font: Arial,sans-serif;
+$xl: 1200px;
+$md: 1023px;
+$sm: 767px;
+$xs: 600px;
+
+@mixin visibility($opacity: 0, $visibility: hidden, $pointer: none) {
+	opacity: $opacity;
+	visibility: $visibility;
+	pointer-events: $pointer;
+}
+
+@mixin transition($params, $delay: .2s, $effect: ease) {
+	transition: $params $delay $effect;
+}
+
+@mixin absolute() {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+@mixin breakpoint($point) {
+	@if $point == xl {
+		@media (max-width: $xl) { @content ; }
+	}
+	@else if $point == md {
+		@media (max-width: $md) { @content ; }
+ 	}
+	@else if $point == sm {
+		@media (max-width: $sm) { @content ; }
+	}
+	@else if $point == xs {
+		@media (max-width: $xs) { @content ; }
+	}
+}
+
+@mixin breakpoint-min($point) {
+	@if $point == xl {
+		@media (min-width: $xl + 1) { @content ; }
+	}
+	@else if $point == md {
+		@media (min-width: $md + 1) { @content ; }
+ 	}
+	@else if $point == sm {
+		@media (min-width: $sm + 1) { @content ; }
+	}
+	@else if $point == xs {
+		@media (min-width: $xs +1 ) { @content ; }
+	}
+}

@@ -1,0 +1,107 @@
+// max-width
+
+// xl
+@include breakpoint(xl) {
+   $container: 1024px;
+
+   .container {
+      max-width: $container;
+   }
+
+   @for $i from 1 through 12 {
+      .xl-col-#{$i} { width: 8.33333333% * $i; }
+   }
+
+   .xl-hidden {
+      display: none;
+   }
+
+   .xl-flex-column {
+      flex-direction: column;
+   }
+
+   .xl-w-auto {
+      width: auto;
+   }
+}
+
+// md
+@include breakpoint(md) {
+   $container: 768px;
+
+   .container {
+      max-width: $container;
+   }
+
+   @for $i from 1 through 12 {
+      .md-col-#{$i} { width: 8.33333333% * $i; }
+   }
+
+   .md-hidden {
+      display: none;
+   }
+
+   .md-flex-column {
+      flex-direction: column;
+   }
+}
+
+// sm
+@include breakpoint(sm) {
+   $container: 600px;
+   .container {
+      max-width: $container;
+   }
+   @for $i from 1 through 12 {
+      .sm-col-#{$i} { width: 8.33333333% * $i; }
+   }
+
+   .sm-hidden {
+      display: none;
+   }
+
+   .sm-flex-column {
+      flex-direction: column;
+   }
+}
+
+// xs
+@include breakpoint(xs) {
+   @for $i from 1 through 12 {
+      .xs-col-#{$i} { width: 8.33333333% * $i; }
+   }
+
+   .xs-hidden {
+      display: none;
+   }
+
+   .xs-flex-column {
+      flex-direction: column;
+   }
+}
+
+// min-width
+
+@include breakpoint-min(xl) {
+   .xl-visible {
+      display: none;
+   }
+}
+
+@include breakpoint-min(md) {
+   .md-visible {
+      display: none;
+   }
+}
+
+@include breakpoint-min(sm) {
+   .sm-visible {
+      display: none;
+   }
+}
+
+@include breakpoint-min(xs) {
+   .xs-visible {
+      display: none;
+   }
+}
