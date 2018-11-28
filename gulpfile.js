@@ -43,7 +43,10 @@ gulp.task('sass', function () {
 });
 
 gulp.task('js', function () {
-   return gulp.src('./src/js/*.js')
+   return gulp.src([
+   	'./src/js/jquery-3.3.1.min.js',
+   	'./src/js/*.js'
+   	])
       .pipe(concat('vendor.js'))
       .pipe(uglify())
       .pipe(gulp.dest('./assets/js'))
