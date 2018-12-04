@@ -38,18 +38,21 @@ gulp.task('sass', function () {
          browsers: ['last 2 versions'],
          cascade: false
       }))
-      .pipe(gulp.dest('./assets/css'))
+      .pipe(gulp.dest('./css'))
       .pipe(browserSync.stream());
 });
 
 gulp.task('js', function () {
    return gulp.src([
    	'./src/js/jquery-3.3.1.min.js',
+   	'./src/js/imagesloaded.min.js',
+   	'./src/js/owl.carousel.min.js',
+   	'./src/js/jquery.fancybox.min.js',
    	'./src/js/*.js'
    	])
       .pipe(concat('vendor.js'))
       .pipe(uglify())
-      .pipe(gulp.dest('./assets/js'))
+      .pipe(gulp.dest('./js'))
       .pipe(browserSync.stream());
 });
 
