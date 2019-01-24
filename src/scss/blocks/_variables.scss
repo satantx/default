@@ -2,10 +2,10 @@ $container: 1200px;
 $container-slim: 1030px;
 $gutter: 15px;
 $gutter-site: 20px;
-$default-link: #ff0000;
-$default-color: #000;
-$default-size: 16px;
-$default-font: Arial,sans-serif;
+$link: #ff0000;
+$color: #000;
+$size: 16px;
+$font: Arial,sans-serif;
 $xl: 1200px;
 $md: 1023px;
 $sm: 767px;
@@ -15,10 +15,6 @@ $xs: 600px;
 	opacity: $opacity;
 	visibility: $visibility;
 	pointer-events: $pointer;
-}
-
-@mixin transition($params, $delay: .2s, $effect: ease) {
-	transition: $params $delay $effect;
 }
 
 @mixin absolute() {

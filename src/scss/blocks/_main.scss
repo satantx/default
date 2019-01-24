@@ -4,15 +4,15 @@ ol, ul {list-style: none;}
 table {border-collapse: collapse; border-spacing: 0;}
 img {border: 0; max-width: 100%; vertical-align: bottom; }
 button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
-input, button, textarea, select {font-family:$default-font; resize: none; font-size: $default-size; font-weight: 400;}
+input, button, textarea, select {font-family:$font; resize: none; font-size: $size; font-weight: 400;}
 *, *::before, *::after{box-sizing: inherit;}
 
 body {
 	height: 100vh;
-	font-size: $default-size;
-	line-height: $default-size * 1.5;
-	font-family: $default-font;
-	color: $default-color;
+	font-size: $size;
+	line-height: $size * 1.5;
+	font-family: $font;
+	color: $color;
 	font-weight: 400;
 	cursor: default;
 	background: #fff;
@@ -22,7 +22,7 @@ body {
 }
 
 a {
-	color: $default-link;
+	color: $link;
 	text-decoration: none;
 	outline: none;
 
@@ -87,6 +87,8 @@ a {
 @for $i from 1 through 12 {
 	.col-#{$i} { width: 8.33333333% * $i; }
 }
+
+.col-2-5 {width: 20%;}
 
 svg:not(:root) {
 	overflow: hidden;
@@ -162,5 +164,9 @@ $max: 10;
 
 .absolute-block {
 	@include absolute;
+}
+
+.tab-pane:not(.active) {
+   display: none;
 }
 
