@@ -10,7 +10,7 @@ input, button, textarea, select {font-family:$font; resize: none; font-size: $si
 body {
 	height: 100vh;
 	font-size: $size;
-	line-height: $size * 1.5;
+	line-height: 24px;
 	font-family: $font;
 	color: $color;
 	font-weight: 400;
@@ -160,6 +160,10 @@ $max: 10;
 
 .nowrap {
 	white-space: nowrap;
+}
+
+.center {
+	text-align: center;
 }
 
 .absolute-block {

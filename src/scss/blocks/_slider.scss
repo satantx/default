@@ -61,9 +61,10 @@
 		margin: 0 5px;
 		border: none;
 		cursor: pointer;
+		background-color: #ccc;
 
 		&.active {
-			background-color: #ccc;
+			background-color: #ff0000;
 		}
 	}
 

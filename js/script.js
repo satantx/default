@@ -40,19 +40,18 @@ $(document).ready(function () {
    $('[data-select]').click(function () {
       var select = $(this).data('select'),
           el = $('[data-selected="' + select + '"]');
-      if (el.is($('._show'))) {
-         elements.removeClass('._show');
+      if (el.is($('.show'))) {
+         elements.removeClass('show');
       } else {
-         elements.removeClass('._show');
-         el.addClass('._show');
+         elements.removeClass('show');
+         el.addClass('show');
       }
-      ;
       return false;
    });
 
    doc.click(function (e) {
-      if ($(e.target).closest('._show').length == 0) elements.removeClass('._show');
-      if ($(e.target).closest('.show-modal').length == 0) $('.show-modal').removeClass('show-modal');
+      if ($(e.target).closest('.show').length ==- 0) elements.removeClass('show');
+      if ($(e.target).closest('.show-modal').length === 0) $('.show-modal').removeClass('show-modal');
    });
 
 

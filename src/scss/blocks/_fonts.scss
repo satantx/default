@@ -1,16 +1,16 @@
 @font-face {
 	font-family: "icons";
-	src: url("/fonts/icon/icons.eot?#iefix") format("embedded-opentype"),
-		  url("/fonts/icon/icons.woff2") format("woff2"),
-		  url("/fonts/icon/icons.woff") format("woff"),
-		  url("/fonts/icon/icons.ttf") format("truetype"),
-		  url("/fonts/icon/icons.svg#icons") format("svg");
+	src: url("../fonts/icon/icons.eot?#iefix") format("embedded-opentype"),
+		  url("../fonts/icon/icons.woff2") format("woff2"),
+		  url("../fonts/icon/icons.woff") format("woff"),
+		  url("../fonts/icon/icons.ttf") format("truetype"),
+		  url("../fonts/icon/icons.svg#icons") format("svg");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	@font-face {
       font-family: 'icons';
-      src: url('/fonts/icon/icons.svg#icons') format('svg');
+      src: url('../fonts/icon/icons.svg#icons') format('svg');
    }
 }
 
