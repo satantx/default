@@ -28,16 +28,17 @@
       @include visibility(1,visible, all);
    }
 
-}
+   &-main {
+		width: 100%;
+		max-width: 830px;
+		position: relative;
+		flex-shrink: 0;
+		opacity:0;
+		background-color: #fff;
+		transition: opacity .4s ease;
+	}
 
-.modal-main {
-	width: 100%;
-	max-width: 830px;
-	position: relative;
-	flex-shrink: 0;
-	opacity:0;
-	background-color: #fff;
-	transition: opacity .2s ease;
+
 }
 
 .show-modal .modal-main {

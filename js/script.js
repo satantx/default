@@ -51,37 +51,42 @@ $(document).ready(function () {
 
    doc.click(function (e) {
       if ($(e.target).closest('.show').length ==- 0) elements.removeClass('show');
-      if ($(e.target).closest('.show-modal').length === 0) $('.show-modal').removeClass('show-modal');
+      if ($(e.target).closest('.madal-main').length === 0) close_modal();
    });
 
 
    // modal
    (function () {
-      var documentWidth = parseInt(document.documentElement.clientWidth),
-          windowsWidth = parseInt(window.innerWidth),
-          scrollbarWidth = windowsWidth - documentWidth;
+      var scrollbarWidth = parseInt(window.innerWidth) - parseInt(document.documentElement.clientWidth);
       layer.append('<style>body.overlay-modal {margin-right: ' + scrollbarWidth + 'px; overflow: hidden;}</style>');
    }());
 
    doc.on('click', '[data-modal]', function () {
-      var el = $(this),
-          name = el.data('modal');
-      layer.addClass('overlay-modal');
-      $('#' + name).addClass('show-modal');
+      var el = $(this), name = el.data('modal');
+      open_modal(name);
       return false;
    });
 
    doc.on('click', '.js-close', function () {
-      layer.removeClass('overlay-modal');
-      $('.show-modal').removeClass('show-modal');
+      close_modal();
       return false;
    });
+
+   function open_modal(name) {
+		layer.addClass('overlay-modal');
+		$('#' + name).addClass('show-modal');
+   }
+
+   function close_modal() {
+		layer.removeClass('overlay-modal');
+      $('.show-modal').removeClass('show-modal');
+   }
 
 });
 
 var notify_timer;
 
-function notify(text) {
+function notify(text, time = 2000) {
    clearTimeout(notify_timer);
    $('.notify').remove();
    var el = $('<div class="notify"><p>' + text + '</p></div>').hide();
@@ -90,5 +95,5 @@ function notify(text) {
    notify_timer = setTimeout(function () {
       el.stop().fadeOut(200);
       clearTimeout(notify_timer);
-   }, 2000);
+   }, time);
 }
