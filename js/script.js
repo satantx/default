@@ -50,8 +50,8 @@ $(document).ready(function () {
    });
 
    doc.click(function (e) {
-      if ($(e.target).closest('.show').length ==- 0) elements.removeClass('show');
-      if ($(e.target).closest('.madal-main').length === 0) close_modal();
+      if ($(e.target).closest('.show').length === 0) elements.removeClass('show');
+      if ($(e.target).closest('.modal-main').length === 0) close_modal();
    });
 
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
       return false;
    });
 
-   doc.on('click', '.js-close', function () {
+   doc.on('click', '.js-modal-close', function () {
       close_modal();
       return false;
    });
