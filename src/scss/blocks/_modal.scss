@@ -25,7 +25,10 @@
    }
    
    &.show-modal {
-      @include visible;
+      	@include visible;
+		.modal-main {
+			opacity:1;
+		}
    }
 
    &-main {
@@ -37,10 +40,4 @@
 		background-color: #fff;
 		transition: opacity .4s ease;
 	}
-
-
-}
-
-.show-modal .modal-main {
-	opacity:1;
 }
