@@ -73,6 +73,7 @@ $(document).ready(function () {
    });
 
    function open_modal(name) {
+      close_modal();
 		layer.addClass('overlay-modal');
 		$('#' + name).addClass('show-modal');
    }
