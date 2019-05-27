@@ -51,7 +51,7 @@ $(document).ready(function () {
 
    doc.click(function (e) {
       if ($(e.target).closest('.show').length === 0) elements.removeClass('show');
-      if ($(e.target).closest('.modal-main').length === 0) close_modal();
+      if ($(e.target).closest('.js-modal-main').length === 0) close_modal();
    });
 
 
