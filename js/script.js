@@ -37,7 +37,7 @@ $(function(){
 
    // popup menu
    var elements = $('[data-selected]');
-   $('[data-select]').click(function () {
+   doc.on('click', '[data-select]', function () {
       var select = $(this).data('select'),
           el = $('[data-selected="' + select + '"]');
       if (el.is($('.show'))) {
@@ -53,7 +53,6 @@ $(function(){
       if ($(e.target).closest('.show').length === 0) elements.removeClass('show');
       if ($(e.target).closest('.js-modal-main').length === 0) close_modal();
    });
-
 
    // modal
    (function () {
