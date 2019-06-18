@@ -3,19 +3,25 @@ $(function(){
    var doc = $(document),
        layer = $('body');
 
-
    // slidera init
    function initSliders(sliderSelector, sliderOptions) {
       $(sliderSelector).owlCarousel($.extend({
          items: 1,
-         nav: false,
-         dots: false,
+         nav: true,
+         dots: true,
          loop: false,
          margin: 30
       }, sliderOptions));
    }
 
-   initSliders('.advantages-slider', {items: 4});
+   initSliders('.advantages-slider', {
+      items: 3,
+      responsive: {
+         0: {items: 1},
+         500: {items: 2},
+         768: {items: 3},
+      }
+   });
 
    // tabs
    $('.tabs').each(function () {
@@ -34,23 +40,22 @@ $(function(){
       }
    });
 
-
    // popup menu
    var elements = $('[data-selected]');
    doc.on('click', '[data-select]', function () {
       var select = $(this).data('select'),
           el = $('[data-selected="' + select + '"]');
-      if (el.is($('.show'))) {
-         elements.removeClass('show');
+      if (el.is($('.select-show'))) {
+         elements.removeClass('select-show');
       } else {
-         elements.removeClass('show');
-         el.addClass('show');
+         elements.removeClass('select-show');
+         el.addClass('select-show');
       }
       return false;
    });
 
    doc.click(function (e) {
-      if ($(e.target).closest('.show').length === 0) elements.removeClass('show');
+      if ($(e.target).closest('.select-show').length === 0) elements.removeClass('select-show');
       if ($(e.target).closest('.js-modal-main').length === 0) close_modal();
    });
 

@@ -13,15 +13,11 @@ $sm: 767px;
 $xs: 600px;
 
 @mixin hidden() {
-   opacity: 0;
-   visibility: hidden;
-   pointer-events: none;
+   display: none;
 }
 
 @mixin visible() {
-   opacity: 1;
-   visibility: visible;
-   pointer-events: all;
+   display: block;
 }
 
 @mixin absolute() {
