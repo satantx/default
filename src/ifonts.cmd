@@ -1,1 +1,1 @@
-icon-font-generator svg/*.svg -o ../fonts/icons --normalize true --round 100
+icon-font-generator svg/*.svg -o ../fonts/icon --normalize true --round 100

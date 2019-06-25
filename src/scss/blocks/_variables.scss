@@ -1,7 +1,7 @@
-$container: 1200px;
+$gutter-site: 20px;
+$container: 1200px + ($gutter-site * 2);
 $container-slim: 1030px;
 $gutter: 15px;
-$gutter-site: 20px;
 $link: #ff0000;
 $link-hover: #ff0000;
 $color: #000;
