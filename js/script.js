@@ -3,7 +3,7 @@ $(function(){
    var doc = $(document),
        layer = $('body');
 
-   // slidera init
+   // slider init
    function initSliders(sliderSelector, sliderOptions) {
       $(sliderSelector).owlCarousel($.extend({
          items: 1,
@@ -94,7 +94,7 @@ var notify_timer;
 function notify(text, time = 2000) {
    clearTimeout(notify_timer);
    $('.notify').remove();
-   var el = $('<div class="notify"><p>' + text + '</p></div>').hide();
+   var el = $('<div class="notify">' + text + '</div>').hide();
    $('body').append(el);
    el.stop().fadeIn(200);
    notify_timer = setTimeout(function () {
