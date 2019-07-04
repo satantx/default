@@ -88,7 +88,13 @@ a {
 	.col-#{$i} { width: 8.33333333% * $i; }
 }
 
-.col-2-5 {width: 20%;}
+.col-2-5 {
+   width: 20%;
+}
+
+@for $f from 12 through 20 {
+   .fs-#{$f} { font-size: #{$f}px; }
+}
 
 svg:not(:root) {
 	overflow: hidden;

@@ -82,11 +82,17 @@
    .xl-visible {
       display: none;
    }
+   .xl-min-flex {
+      display: flex;
+   }
 }
 
 @include breakpoint-min(md) {
    .md-visible {
       display: none;
+   }
+   .md-min-flex {
+      display: flex;
    }
 }
 
@@ -94,10 +100,16 @@
    .sm-visible {
       display: none;
    }
+   .sm-min-flex {
+      display: flex;
+   }
 }
 
 @include breakpoint-min(xs) {
    .xs-visible {
       display: none;
+   }
+   .xs-min-flex {
+      display: flex;
    }
 }
