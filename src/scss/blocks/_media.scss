@@ -2,7 +2,7 @@
 
 // xl
 @include breakpoint(xl) {
-   $container: 1024px;
+   $container: 1200px;
 
    .container {
       max-width: $container;
@@ -17,6 +17,26 @@
    }
 
    .xl-flex-column {
+      flex-direction: column;
+   }
+}
+
+@include breakpoint(lg) {
+   $container: 1024px;
+
+   .container {
+      max-width: $container;
+   }
+
+   @for $i from 1 through 12 {
+      .lg-col-#{$i} { width: 8.33333333% * $i; }
+   }
+
+   .lg-hidden {
+      display: none;
+   }
+
+   .lg-flex-column {
       flex-direction: column;
    }
 }
@@ -82,7 +102,16 @@
    .xl-visible {
       display: none;
    }
-   .xl-min-flex {
+   .xl-flex {
+      display: flex;
+   }
+}
+
+@include breakpoint-min(lg) {
+   .lg-visible {
+      display: none;
+   }
+   .lg-flex {
       display: flex;
    }
 }
@@ -91,7 +120,7 @@
    .md-visible {
       display: none;
    }
-   .md-min-flex {
+   .md-flex {
       display: flex;
    }
 }
@@ -100,7 +129,7 @@
    .sm-visible {
       display: none;
    }
-   .sm-min-flex {
+   .sm-flex {
       display: flex;
    }
 }
@@ -109,7 +138,7 @@
    .xs-visible {
       display: none;
    }
-   .xs-min-flex {
+   .xs-flex {
       display: flex;
    }
 }

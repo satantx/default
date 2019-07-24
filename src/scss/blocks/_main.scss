@@ -1,11 +1,11 @@
-* {outline: none; margin: 0; padding: 0px;}
-html {font-family: sans-serif; touch-action: manipulation; box-sizing: border-box;}
-ol, ul {list-style: none;}
-table {border-collapse: collapse; border-spacing: 0;}
-img {border: 0; max-width: 100%; vertical-align: bottom; }
-button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
-input, button, textarea, select {font-family:$font; resize: none; font-size: $size; font-weight: 400;}
-*, *::before, *::after{box-sizing: inherit;}
+* { outline: none; margin: 0; padding: 0px;}
+html { font-family: sans-serif; touch-action: manipulation; box-sizing: border-box;}
+ol, ul { list-style: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+img { border: 0; max-width: 100%; vertical-align: bottom; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0;padding: 0;}
+input, button, textarea, select { font-family:$font; resize: none; font-size: $size; font-weight: 400;}
+*, *::before, *::after{ box-sizing: inherit; }
 
 body {
 	height: 100vh;
@@ -15,10 +15,7 @@ body {
 	color: $color;
 	font-weight: 400;
 	cursor: default;
-	background: #fff;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
+	background-color: #fff;
 }
 
 a {
@@ -34,7 +31,6 @@ a {
 .wrapper {
 	min-width: 320px;
 	min-height: 100vh;
-	overflow: hidden;
 	position: relative;
 	display: flex;
 	flex-direction: column;

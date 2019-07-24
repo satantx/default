@@ -5,7 +5,6 @@
 		  url("../fonts/icon/icons.woff") format("woff"),
 		  url("../fonts/icon/icons.ttf") format("truetype"),
 		  url("../fonts/icon/icons.svg#icons") format("svg");
-   font-style: normal;
    font-weight: normal;
 }
 
@@ -16,7 +15,6 @@
    url("../fonts/iconbold/icons.woff") format("woff"),
    url("../fonts/iconbold/icons.ttf") format("truetype"),
    url("../fonts/iconbold/icons.svg#icons") format("svg");
-   font-style: normal;
    font-weight: bold;
 }
 
@@ -33,6 +31,7 @@
 
 .icon {
 	font-family: icons, sans-serif;
+   font-style: normal;
 	text-transform: lowercase;
 }
 
