@@ -45,8 +45,6 @@ gulp.task('sass', function () {
 gulp.task('js', function () {
    return gulp.src([
    	'./src/js/jquery-3.3.1.min.js',
-   	'./src/js/owl.carousel.min.js',
-   	'./src/js/jquery.fancybox.min.js',
    	'./src/js/*.js'
    	])
       .pipe(concat('vendor.js'))
