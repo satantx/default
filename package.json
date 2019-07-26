@@ -18,5 +18,8 @@
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1"
+  },
+  "devDependencies": {
+    "gulp-uglify-es": "^1.0.4"
   }
 }
