@@ -23,39 +23,8 @@ $(function(){
       }
    });
 
-   // tabs
-   $('.tabs').each(function () {
-      var el = $(this),
-          link = el.data('link') || 'tab',
-          item = $('.' + link + '-item', el),
-          pane = $('.' + link + '-pane', el);
-      index_pane(0);
-      item.click(function () {
-         var index = $(this).index();
-         index_pane(index);
-      });
-
-      function index_pane(index) {
-         pane.eq(index).add(item.eq(index)).addClass('active').siblings().removeClass('active');
-      }
-   });
-
-   // popup menu
-   var elements = $('[data-selected]');
-   doc.on('click', '[data-select]', function () {
-      var select = $(this).data('select'),
-          el = $('[data-selected="' + select + '"]');
-      if (el.is($('.select-show'))) {
-         elements.removeClass('select-show');
-      } else {
-         elements.removeClass('select-show');
-         el.addClass('select-show');
-      }
-      return false;
-   });
 
    doc.click(function (e) {
-      if ($(e.target).closest('.select-show').length === 0) elements.removeClass('select-show');
       if ($(e.target).closest('.js-modal-main').length === 0) close_modal();
    });
 
@@ -89,16 +58,74 @@ $(function(){
 
 });
 
-var notify_timer;
+// Tabs
+(function ($) {
+   $.fn.Tabs = function () {
+      return this.each(function () {
+         var el = $(this),
+             LINK = el.data('link') || 'tab',
+             ITEM = $('.' + LINK + '-item', el),
+             PANE = $('.' + LINK + '-pane', el);
+         index_pane(0);
+         ITEM.click(function () {
+            var index = $(this).index();
+            index_pane(index);
+         });
 
-function notify(text, time = 2000) {
-   clearTimeout(notify_timer);
-   $('.notify').remove();
-   var el = $('<div class="notify">' + text + '</div>').hide();
-   $('body').append(el);
-   el.stop().fadeIn(200);
-   notify_timer = setTimeout(function () {
-      el.stop().fadeOut(200);
-      clearTimeout(notify_timer);
-   }, time);
-}
+         function index_pane(index) {
+            PANE.eq(index).add(ITEM.eq(index)).addClass('active').siblings().removeClass('active');
+         }
+      })
+   }
+})(jQuery);
+
+// AppPopup
+(function ($) {
+   $.fn.AppPopup = function () {
+      var DOC = $.Doc,
+          ELEMENTS = $('[data-selected]'),
+          SHOWCLASS = 'show-popup';
+
+      $('[data-select]').click(function () {
+         var select = $(this).data('select'),
+             el = $('[data-selected="' + select + '"]');
+
+         if (el.is($('.' + SHOWCLASS))) {
+            ELEMENTS.removeClass(SHOWCLASS);
+         } else {
+            ELEMENTS.removeClass(SHOWCLASS);
+            el.addClass(SHOWCLASS);
+         }
+         return false;
+      });
+
+      DOC.click(function (e) {
+         if ($(e.target).closest('.' + SHOWCLASS).length === 0) ELEMENTS.removeClass(SHOWCLASS);
+      });
+
+      return this;
+   };
+})(jQuery);
+
+(function ($) {
+   var NOTIFY_TIMER;
+   var BODY = $.Body || $('body');
+   function notify(text, position = 'center', theme = 'default', time = 2000) {
+      clearTimeout(NOTIFY_TIMER);
+      $('.notify').remove();
+      var el = $('<div class="notify">' + text + '</div>').addClass(position).addClass(theme).hide();
+      BODY.append(el);
+      el.stop().fadeIn(200);
+
+      NOTIFY_TIMER = setTimeout(function () {
+         el.stop().fadeOut(200);
+         console.log('11111');
+         clearTimeout(NOTIFY_TIMER);
+      }, time);
+   }
+
+   $.notify = notify;
+
+})(jQuery);
+
+window.notify = window.notify || jQuery.notify;
