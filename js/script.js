@@ -108,8 +108,9 @@ $(function(){
 })(jQuery);
 
 (function ($) {
-   var NOTIFY_TIMER;
-   var BODY = $.Body || $('body');
+   var NOTIFY_TIMER,
+       BODY = $.Body || $('body');
+
    function notify(text, position = 'center', theme = 'default', time = 2000) {
       clearTimeout(NOTIFY_TIMER);
       $('.notify').remove();
@@ -119,7 +120,6 @@ $(function(){
 
       NOTIFY_TIMER = setTimeout(function () {
          el.stop().fadeOut(200);
-         console.log('11111');
          clearTimeout(NOTIFY_TIMER);
       }, time);
    }
