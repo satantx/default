@@ -107,6 +107,7 @@ $(function(){
    };
 })(jQuery);
 
+// notify
 (function ($) {
    var NOTIFY_TIMER,
        BODY = $.Body || $('body');
@@ -129,3 +130,28 @@ $(function(){
 })(jQuery);
 
 window.notify = window.notify || jQuery.notify;
+
+// iMask
+(function ($) {
+   $.fn.iMask = function () {
+      return this.each(function () {
+         var el = this;
+         var maskOptions = {
+            mask: '{+7} (000) 000-00-00',
+            lazy: false,
+            placeholderChar: '_'
+         };
+         var mask = new IMask(el, maskOptions);
+      })
+   }
+})(jQuery);
+
+// Demo
+(function ($) {
+   $.fn.Demo = function () {
+      return this.each(function () {
+         var el = $(this);
+      })
+   }
+})(jQuery);
+
