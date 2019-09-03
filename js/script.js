@@ -137,7 +137,7 @@ window.notify = window.notify || jQuery.notify;
         return this.each(function () {
             var el = this;
             var maskOptions = {
-                mask: '{+7} (000) 000-00-00',
+                mask: '{+7} 000 000-00-00',
                 lazy: false,
                 placeholderChar: '_'
             };
