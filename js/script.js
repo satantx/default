@@ -24,7 +24,7 @@ $(function () {
     });
 
 
-    $('.modal').click(function (e) {
+    $('.modal').on('click', function (e) {
         if ($(e.target).closest('.js-modal-main').length === 0) close_modal();
     });
 
