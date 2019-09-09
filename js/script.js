@@ -63,17 +63,17 @@ $(function () {
     $.fn.Tabs = function () {
         return this.each(function () {
             var el = $(this),
-                LINK = el.data('link') || 'tab',
-                ITEM = $('.' + LINK + '-item', el),
-                PANE = $('.' + LINK + '-pane', el);
+                link = el.data('link') || 'tab',
+                item = $('.' + link + '-item', el),
+                pane = $('.' + link + '-pane', el);
             index_pane(0);
-            ITEM.click(function () {
+            item.on('click', function () {
                 var index = $(this).index();
                 index_pane(index);
             });
 
             function index_pane(index) {
-                PANE.eq(index).add(ITEM.eq(index)).addClass('active').siblings().removeClass('active');
+                pane.eq(index).add(item.eq(index)).addClass('active').siblings().removeClass('active');
             }
         })
     }
@@ -82,25 +82,25 @@ $(function () {
 // AppPopup
 (function ($) {
     $.fn.AppPopup = function () {
-        var DOC = $.Doc,
-            ELEMENTS = $('[data-selected]'),
-            SHOWCLASS = 'show-popup';
+        var doc = $.Doc,
+            elements = $('[data-selected]'),
+            showclass = 'show-popup';
 
         $('[data-select]').click(function () {
             var select = $(this).data('select'),
                 el = $('[data-selected="' + select + '"]');
 
-            if (el.is($('.' + SHOWCLASS))) {
-                ELEMENTS.removeClass(SHOWCLASS);
+            if (el.is($('.' + showclass))) {
+                elements.removeClass(showclass);
             } else {
-                ELEMENTS.removeClass(SHOWCLASS);
-                el.addClass(SHOWCLASS);
+                elements.removeClass(showclass);
+                el.addClass(showclass);
             }
             return false;
         });
 
-        DOC.click(function (e) {
-            if ($(e.target).closest('.' + SHOWCLASS).length === 0) ELEMENTS.removeClass(SHOWCLASS);
+        doc.click(function (e) {
+            if ($(e.target).closest('.' + showclass).length === 0) elements.removeClass(showclass);
         });
 
         return this;
@@ -109,19 +109,19 @@ $(function () {
 
 // notify
 (function ($) {
-    var NOTIFY_TIMER,
-        BODY = $.Body || $('body');
+    var notify_timer,
+        body = $.Body || $('body');
 
     function notify(text, position = 'center', theme = 'default', time = 2000) {
-        clearTimeout(NOTIFY_TIMER);
+        clearTimeout(notify_timer);
         $('.notify').remove();
         var el = $('<div class="notify">' + text + '</div>').addClass(position).addClass(theme).hide();
-        BODY.append(el);
+        body.append(el);
         el.stop().fadeIn(200);
 
-        NOTIFY_TIMER = setTimeout(function () {
+        notify_timer = setTimeout(function () {
             el.stop().fadeOut(200);
-            clearTimeout(NOTIFY_TIMER);
+            clearTimeout(notify_timer);
         }, time);
     }
 
