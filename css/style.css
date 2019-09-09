@@ -383,9 +383,6 @@ svg:not(:root) {
 
 .modal {
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -414,7 +411,14 @@ svg:not(:root) {
     -ms-flex-negative: 0;
     flex-shrink: 0; }
   .modal.show-modal {
-    display: block; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-animation: modal normal .3s ease;
+    animation: modal normal .3s ease; }
+    .modal.show-modal .modal-main {
+      -webkit-animation: modal-main normal .3s ease;
+      animation: modal-main normal .3s ease; }
   .modal-main {
     width: 100%;
     max-width: 500px;
@@ -422,6 +426,34 @@ svg:not(:root) {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     background-color: #fff; }
+
+@-webkit-keyframes modal {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes modal {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes modal-main {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8); }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1); } }
+
+@keyframes modal-main {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8); }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1); } }
 
 .slider {
   display: -webkit-box;
