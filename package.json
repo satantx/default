@@ -1,5 +1,5 @@
 {
-  "name": "_test",
+  "name": "d503",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +20,8 @@
     "gulp-uglify": "^3.0.1"
   },
   "devDependencies": {
+    "gulp-cheerio": "^0.6.3",
+    "gulp-svgstore": "^7.0.1",
     "gulp-uglify-es": "^1.0.4"
   }
 }

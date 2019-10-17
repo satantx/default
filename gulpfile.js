@@ -7,6 +7,8 @@ var notify = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify-es').default;
+var svgstore = require('gulp-svgstore');
+var cheerio = require('gulp-cheerio');
 
 // event
 
@@ -51,6 +53,21 @@ gulp.task('js', function () {
       .pipe(uglify())
       .pipe(gulp.dest('./js'))
       .pipe(browserSync.stream());
+});
+
+gulp.task("sprite", function () {
+   return gulp
+       .src("./src/svg/*.svg")
+       .pipe(cheerio({
+          run: function ($) {
+             $('[fill]').removeAttr('fill');
+          },
+          parserOptions: { xmlMode: true }
+       }))
+       .pipe(svgstore({
+          inlineSvg: true
+       }))
+       .pipe(gulp.dest('./img'));
 });
 
 gulp.task('default', ['server']);
