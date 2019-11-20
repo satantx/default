@@ -9,11 +9,11 @@ $color: #000;
 $size: 16px;
 $font: Arial, sans-serif;
 
-$xl: 1300px;
+$xl: $container;
 $lg: 1200px;
 $md: 1023px;
 $sm: 767px;
-$xs: 600px;
+$xs: 500px;
 
 @mixin hidden() {
    display: none;

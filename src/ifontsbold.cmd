@@ -1,1 +1,0 @@
-icon-font-generator font-svgbold/*.svg -o ../fonts/iconbold --normalize true --round 100

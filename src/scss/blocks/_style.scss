@@ -1,0 +1,62 @@
+body {
+   height: 100vh;
+   font-size: $size;
+   line-height: 24px;
+   font-family: $font;
+   color: $color;
+   font-weight: 400;
+   cursor: default;
+   background-color: #fff;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
+}
+
+a {
+   color: $link;
+   text-decoration: none;
+   outline: none;
+
+   &:hover {
+      text-decoration: none;
+   }
+}
+
+h1 {
+   
+}
+
+h2 {
+   
+}
+
+h3 {
+   
+}
+
+h4 {
+   
+}
+
+.wrapper {
+   min-width: 320px;
+   min-height: 100vh;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+}
+
+.wrap {
+   flex: 1 0 auto;
+   position: relative;
+}
+
+.footer {
+   flex: 0 0 auto;
+   position: relative;
+}
+
+.content {
+   position: relative;
+   padding: 20px 0 60px;
+}

@@ -36,7 +36,7 @@ $('[data-time]').each(function () {
 
       if (distance < 0) {
          clearInterval(x);
-         $('.timer', timer).remove();
+         $('.js-timer', timer).remove();
          $('.js-finish', timer).text('Акция завершена!');
       }
    }, 1000);

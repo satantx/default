@@ -1,0 +1,47 @@
+* {
+   outline: none;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-family: sans-serif;
+   touch-action: manipulation;
+   box-sizing: border-box;
+}
+
+ol, ul {
+   list-style: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+img {
+   border: 0;
+   max-width: 100%;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+   border: 0;
+   padding: 0;
+}
+
+input, 
+button, 
+textarea, 
+select {
+   font-family: $font;
+   resize: none;
+   font-size: $size;
+   font-weight: 400;
+}
+
+*, 
+*::before, 
+*::after {
+   box-sizing: inherit;
+}

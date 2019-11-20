@@ -26,6 +26,7 @@
    &.show-modal {
       display: flex;
       animation: modal normal .3s ease;
+
       .modal-main {
          animation: modal-main normal .3s ease;
       }

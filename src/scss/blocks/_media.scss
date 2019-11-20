@@ -2,6 +2,7 @@
 
 // xl
 @include breakpoint(xl) {
+   
    $container: 1200px;
 
    .container {
@@ -9,7 +10,9 @@
    }
 
    @for $i from 1 through 12 {
-      .xl-col-#{$i} { width: 8.33333333% * $i; }
+      .xl-col-#{$i} {
+         width: 8.33333333% * $i;
+      }
    }
 
    .xl-hidden {
@@ -22,6 +25,7 @@
 }
 
 @include breakpoint(lg) {
+   
    $container: 1024px;
 
    .container {
@@ -29,7 +33,9 @@
    }
 
    @for $i from 1 through 12 {
-      .lg-col-#{$i} { width: 8.33333333% * $i; }
+      .lg-col-#{$i} {
+         width: 8.33333333% * $i;
+      }
    }
 
    .lg-hidden {
@@ -43,6 +49,7 @@
 
 // md
 @include breakpoint(md) {
+   
    $container: 768px;
 
    .container {
@@ -50,7 +57,9 @@
    }
 
    @for $i from 1 through 12 {
-      .md-col-#{$i} { width: 8.33333333% * $i; }
+      .md-col-#{$i} {
+         width: 8.33333333% * $i;
+      }
    }
 
    .md-hidden {
@@ -64,12 +73,16 @@
 
 // sm
 @include breakpoint(sm) {
+   
    $container: 600px;
+   
    .container {
       max-width: $container;
    }
    @for $i from 1 through 12 {
-      .sm-col-#{$i} { width: 8.33333333% * $i; }
+      .sm-col-#{$i} {
+         width: 8.33333333% * $i;
+      }
    }
 
    .sm-hidden {
@@ -84,7 +97,9 @@
 // xs
 @include breakpoint(xs) {
    @for $i from 1 through 12 {
-      .xs-col-#{$i} { width: 8.33333333% * $i; }
+      .xs-col-#{$i} {
+         width: 8.33333333% * $i;
+      }
    }
 
    .xs-hidden {
@@ -102,6 +117,7 @@
    .xl-visible {
       display: none;
    }
+
    .xl-flex {
       display: flex;
    }
@@ -111,6 +127,7 @@
    .lg-visible {
       display: none;
    }
+
    .lg-flex {
       display: flex;
    }
@@ -120,6 +137,7 @@
    .md-visible {
       display: none;
    }
+
    .md-flex {
       display: flex;
    }
@@ -129,6 +147,7 @@
    .sm-visible {
       display: none;
    }
+   
    .sm-flex {
       display: flex;
    }
@@ -138,6 +157,7 @@
    .xs-visible {
       display: none;
    }
+   
    .xs-flex {
       display: flex;
    }

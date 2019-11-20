@@ -10,12 +10,14 @@ $.fn.modrate = function(options) {
 		classGrab: 'rate-grab',
 		count: 5,
 		text: '★'
+		// svg
+		// text: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M7.1.6c.3-.8 1.4-.8 1.8 0l1.6 3.7c.1.3.4.6.8.6l3.9.4c.8.1 1.2 1.2.6 1.8l-2.9 2.7c-.3.2-.4.6-.3 1l.8 4c.2.9-.7 1.5-1.4 1.1l-3.4-2c-.3-.2-.7-.2-1 0l-3.4 2c-.7.4-1.6-.2-1.4-1.1l.8-4c.1-.4 0-.7-.3-1l-3-2.7c-.6-.6-.3-1.7.6-1.8l3.9-.4c.3 0 .6-.3.8-.6l1.5-3.7z"/></svg>'
 	},
 	options);
 	return this.each(function() {
 
-		var doc = $(this),
-			data = doc.data(),
+		var el = $(this),
+			data = el.data(),
 			rate = parseInt(data.value, 10),
 			mode = data.mode,
 			name = data.name,
@@ -26,21 +28,21 @@ $.fn.modrate = function(options) {
 			hoverStar = options.classHover,
 			grabStar = options.classGrab;
 
-		doc.removeAttr('data-count data-value');
+		el.removeAttr('data-count data-value');
 
 		if(!count) count = options.count;
 		if(!rate) rate = 0;
 		else if(rate > count) rate = count;
 
 		for(var i = 0; i < count; i++)
-			$('<div class="' + nameStar + '">' + options.text + '</div>').appendTo(doc);
+			$('<div class="' + nameStar + '">' + options.text + '</div>').appendTo(el);
 
 		if(rate > 0) $('.' + nameStar,this).slice(0, rate).addClass(activeStar);
 		
-		if(mode == 'active') {
-			var input = $('<input type="hidden" name="' + name + '"/>').appendTo(doc);
-			doc.removeAttr('data-name data-mode').addClass(grabStar);
-			var item = $('.' + nameStar, doc);
+		if(mode === 'active') {
+			var input = $('<input type="hidden" name="' + name + '"/>').appendTo(el);
+			el.removeAttr('data-name data-mode').addClass(grabStar);
+			var item = $('.' + nameStar, el);
 			item.hover(
 				function() {
 					var index = $(this).index() + 1;
