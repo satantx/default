@@ -74,7 +74,7 @@
 // sm
 @include breakpoint(sm) {
    
-   $container: 600px;
+   $container: 500px;
    
    .container {
       max-width: $container;
