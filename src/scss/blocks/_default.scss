@@ -10,6 +10,7 @@
 .column {
    padding-left: $gutter;
    padding-right: $gutter;
+   flex-grow: 1;
 }
 
 .columns {
@@ -25,10 +26,6 @@
 
 .col-2-5 {
    width: 20%;
-}
-
-@for $f from 12 through 20 {
-   .fs-#{$f} { font-size: #{$f}px; }
 }
 
 svg:not(:root) {
@@ -69,34 +66,6 @@ svg:not(:root) {
 
 .flex-bottom {
    align-items: flex-end;
-}
-
-
-// offsets
-$max: 10;
-
-// margin-right
-@for $i from 1 through $max {
-   $value: $i * 5;
-   .mr-#{$value} { margin-right: #{$value}px; }
-}
-
-// margin-left
-@for $i from 1 through $max {
-   $value: $i * 5;
-   .ml-#{$value} { margin-left: #{$value}px; }
-}
-
-// margin-top
-@for $i from 1 through $max {
-   $value: $i * 5;
-   .mt-#{$value} { margin-top: #{$value}px; }
-}
-
-// margin-bottom
-@for $i from 1 through $max {
-   $value: $i * 5;
-   .mb-#{$value} { margin-bottom: #{$value}px; }
 }
 
 .nowrap {

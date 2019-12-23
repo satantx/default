@@ -15,6 +15,41 @@ $md: 1023px;
 $sm: 767px;
 $xs: 500px;
 
+// offsets
+$max: 10;
+
+// margin-right
+@for $i from 1 through $max {
+   $value: $i * 5;
+   .mr-#{$value} {
+      margin-right: #{$value}px;
+   }
+}
+
+// margin-left
+@for $i from 1 through $max {
+   $value: $i * 5;
+   .ml-#{$value} {
+      margin-left: #{$value}px;
+   }
+}
+
+// margin-top
+@for $i from 1 through $max {
+   $value: $i * 5;
+   .mt-#{$value} {
+      margin-top: #{$value}px;
+   }
+}
+
+// margin-bottom
+@for $i from 1 through $max {
+   $value: $i * 5;
+   .mb-#{$value} {
+      margin-bottom: #{$value}px;
+   }
+}
+
 @mixin hidden() {
    display: none;
 }
